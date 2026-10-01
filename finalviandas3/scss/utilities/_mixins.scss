@@ -1,0 +1,19 @@
+@use "variables" as vars;
+
+@mixin flex-column($gap: 10px, $align: center) {
+	display: flex;
+	flex-direction: column;
+	align-items: $align;
+	gap: $gap;
+}
+
+@mixin responsive-grid($columns: 3, $gap: 20px) {
+	display: grid;
+	grid-template-columns: repeat($columns, minmax(0, 1fr));
+	gap: $gap;
+}
+
+@mixin focus-ring {
+	outline: 2px solid vars.$highlight-color;
+	outline-offset: 2px;
+}

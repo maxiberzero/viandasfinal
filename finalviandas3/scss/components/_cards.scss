@@ -1,0 +1,80 @@
+@use "../utilities/variables" as vars;
+@use "../utilities/mixins" as mix;
+
+%card-base {
+	padding: 20px;
+	border: 2px solid vars.$border-color;
+	text-align: center;
+}
+
+.feature-card {
+	@extend %card-base;
+	@include mix.flex-column(10px);
+
+	h3 {
+		margin-bottom: 0;
+	}
+}
+
+.section4-content {
+	@extend %card-base;
+	@include mix.flex-column(15px);
+}
+
+.testimonial {
+	width: 100%;
+	padding: 15px;
+	border: 2px solid vars.$border-color;
+
+	p {
+		margin: 0;
+	}
+}
+
+.combo-card {
+	@include mix.flex-column(6px);
+
+	img {
+		width: 100%;
+		max-width: 560px;
+		height: auto;
+		object-fit: contain;
+	}
+
+	figcaption {
+		text-align: center;
+	}
+}
+
+.plan-card {
+	@extend %card-base;
+	@include mix.flex-column(10px);
+
+	h1 {
+		margin-bottom: 0;
+	}
+
+	.btn {
+		margin-top: auto;
+	}
+}
+
+.card-img1,
+.card-img2,
+.card-img3 {
+	display: block;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+
+.card.text-bg-dark {
+	position: relative;
+	width: 100%;
+	max-width: 300px;
+	overflow: hidden;
+
+	&:nth-child(even) {
+		border-color: vars.$highlight-color;
+	}
+}

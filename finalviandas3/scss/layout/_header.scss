@@ -1,0 +1,8 @@
+@use "../utilities/variables" as vars;
+
+header {
+	background-color: vars.$primary-color;
+	padding: 20px;
+	text-align: center;
+	font-family: vars.$font-family-heading;
+}
