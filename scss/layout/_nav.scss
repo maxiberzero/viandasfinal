@@ -1,0 +1,58 @@
+@use "../utilities/variables" as vars;
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0;
+
+	.navbar-brand img,
+	> .container > img {
+		width: 150px;
+		height: auto;
+	}
+
+	.navbar-toggler {
+		background-color: transparent;
+		border: 1px solid rgba(255, 255, 255, .5);
+		padding: 7px 10px;
+	}
+
+	.navbar-toggler:focus-visible {
+		outline: 2px solid vars.$highlight-color;
+		outline-offset: 2px;
+	}
+
+	.navbar-toggler-icon {
+		background-image: var(--bs-navbar-toggler-icon-bg);
+	}
+
+	.navbar-nav {
+		align-items: center;
+		gap: 8px;
+	}
+
+	.nav-link {
+		color: white;
+		transition: color .3s ease, background-color .3s ease;
+
+		&:hover {
+			color: vars.$highlight-color;
+		}
+
+		&:focus-visible {
+			outline: 2px solid vars.$highlight-color;
+			outline-offset: 2px;
+		}
+
+		&:active {
+			color: vars.$accent-color;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.navbar .navbar-nav {
+		margin-left: auto;
+	}
+}

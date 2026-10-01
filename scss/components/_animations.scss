@@ -1,0 +1,38 @@
+@use "../utilities/variables" as vars;
+
+@keyframes soft-float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-3px); }
+}
+
+.btn {
+	transition: background-color .3s ease, transform .3s ease;
+
+	&:hover {
+		background-color: vars.$highlight-color;
+		transform: translateY(-2px);
+	}
+
+	&:focus-visible {
+		outline: 2px solid vars.$secondary-color;
+		outline-offset: 2px;
+	}
+
+	&:active {
+		transform: translateY(0);
+	}
+}
+
+.navbar-toggler {
+	transition: background-color .3s ease;
+}
+
+.section4-content .btn {
+	animation: soft-float 4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.section4-content .btn {
+		animation: none;
+	}
+}
